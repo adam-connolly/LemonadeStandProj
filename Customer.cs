@@ -8,5 +8,16 @@ namespace LemonadeStand_3DayStarter
 {
     class Customer
     {
+        //member variables
+        List<string> names;
+        public string name;
+
+        //constructor
+        public Customer()
+        {
+
+        }
+        //member methods
+
     }
 }

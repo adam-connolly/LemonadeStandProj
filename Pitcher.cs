@@ -9,12 +9,19 @@ namespace LemonadeStand_3DayStarter
     class Pitcher : Item
     {
         //member variables
+        public int cupsLeftInPitcher;
+        
 
         //constructor
         public Pitcher()
         {
             name = "Pitcher";
+            cupsLeftInPitcher = 20;
         }
         //member methods
+        public void MakePitcher()
+        {
+            
+        }
     }
 }
