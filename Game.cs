@@ -16,7 +16,7 @@ namespace LemonadeStand_3DayStarter
         //constructor
         public Game()
         {
-            //player = new Player();
+            player = new Player();
             //store = new Store();
             days = new List<Day>();
             currentDay = 1;
@@ -24,15 +24,15 @@ namespace LemonadeStand_3DayStarter
         //member methods
         public void RunGame()
         {
-            SetGameLength();
-            days[0].GenerateCustomerList();
+            //SetGameLength();
+            //GenerateCustomerList();
+            player.SetRecipe();
         }
         public void SetGameLength()
         {
             for (int i = 1; i <= 7; i++)
             {
-                days.Add(new Day($"Day {i}"));
-                Console.WriteLine(days[i - 1].dayNumber);
+                days.Add(new Day($"Day {i}"));                
             }
         }
     }

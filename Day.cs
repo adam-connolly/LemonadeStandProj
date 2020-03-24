@@ -26,7 +26,6 @@ namespace LemonadeStand_3DayStarter
             for (int i = 0; i < 100; i++)
             {
                 customers.Add(new Customer($"Customer{i + 1}"));
-                Console.WriteLine(customers[i].name);
             }
         }
     }

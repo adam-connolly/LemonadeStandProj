@@ -25,5 +25,31 @@ namespace LemonadeStand_3DayStarter
         }
 
         // member methods (CAN DO)
+        public void SetRecipe()
+        {
+            recipe = new Recipe();
+            recipe.DisplayRecipe();
+            Console.WriteLine("Would you like to change your recipe? Input number associated with Yes/No\n" +
+                "1. Yes\n" +
+                "2. No");
+            string userInput = Console.ReadLine();
+            switch (userInput)
+            {
+                case "1":
+                    recipe.ChangeRecipe();
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        public void MakePitcher()
+        {
+            pitcher = new Pitcher();
+        }
+        public void SellCupOfLemonade()
+        {
+
+        }
     }
 }

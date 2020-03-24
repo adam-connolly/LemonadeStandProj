@@ -18,6 +18,10 @@ namespace LemonadeStand_3DayStarter
             this.name = name;
         }
         //member methods
+        public void BuyCupOfLemonade()
+        {
+
+        }
 
     }
 }
