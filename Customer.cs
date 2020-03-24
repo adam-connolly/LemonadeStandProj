@@ -13,9 +13,9 @@ namespace LemonadeStand_3DayStarter
         public string name;
 
         //constructor
-        public Customer()
+        public Customer(string name)
         {
-
+            this.name = name;
         }
         //member methods
 
