@@ -30,11 +30,10 @@ namespace LemonadeStand_3DayStarter
             store.SellIceCubes(player);
             store.SellSugarCubes(player);
             store.SellCups(player);
-            Console.WriteLine(player.wallet.Money);
-            Console.ReadLine();
-            //GenerateCustomerList();
             player.SetRecipe();
+            //GenerateCustomerList();
             player.MakePitcher();
+            
             player.SellCupOfLemonade();
         }
         public void SetGameLength()
