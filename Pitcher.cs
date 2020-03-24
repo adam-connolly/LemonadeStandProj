@@ -19,9 +19,6 @@ namespace LemonadeStand_3DayStarter
             cupsLeftInPitcher = 20;
         }
         //member methods
-        public void MakePitcher()
-        {
-            
-        }
+
     }
 }

@@ -27,5 +27,9 @@ namespace LemonadeStand_3DayStarter
         {
             money -= transactionAmount;
         }
+        public void GetMoneyFromSale(double priceOfCup)
+        {
+            money += priceOfCup;
+        }
     }
 }

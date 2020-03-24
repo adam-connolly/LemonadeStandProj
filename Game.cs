@@ -17,16 +17,25 @@ namespace LemonadeStand_3DayStarter
         public Game()
         {
             player = new Player();
-            //store = new Store();
+            store = new Store();
             days = new List<Day>();
             currentDay = 1;
         }
         //member methods
         public void RunGame()
         {
-            //SetGameLength();
+            SetGameLength();
+            
+            store.SellLemons(player);
+            store.SellIceCubes(player);
+            store.SellSugarCubes(player);
+            store.SellCups(player);
+            Console.WriteLine(player.wallet.Money);
+            Console.ReadLine();
             //GenerateCustomerList();
             player.SetRecipe();
+            player.MakePitcher();
+            player.SellCupOfLemonade();
         }
         public void SetGameLength()
         {

@@ -46,10 +46,18 @@ namespace LemonadeStand_3DayStarter
         public void MakePitcher()
         {
             pitcher = new Pitcher();
+            inventory.RemoveLemonsFromInventory(recipe.amountOfLemons);
+            inventory.RemoveSugarCubesFromInventory(recipe.amountOfSugarCubes);
+
         }
         public void SellCupOfLemonade()
         {
-
+            wallet.GetMoneyFromSale(recipe.pricePerCup);
+            inventory.RemoveCupsFromInventory(1);
+            inventory.RemoveIceCubesFromInventory(recipe.amountOfIceCubes);
+            pitcher.cupsLeftInPitcher--;
         }
+
+        
     }
 }
