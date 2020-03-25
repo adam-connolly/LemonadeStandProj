@@ -39,7 +39,7 @@ namespace LemonadeStand_3DayStarter
         {
             foreach (Day day in days)
             {
-                day.RunDay();
+                day.RunDay(store, player);
             }
         }
     }
