@@ -19,7 +19,7 @@ namespace LemonadeStand_3DayStarter
             amountOfLemons = 4;
             amountOfSugarCubes = 4;
             amountOfIceCubes = 4;
-            pricePerCup = 0.25;
+            pricePerCup = 5.00;
         }
         public void DisplayRecipe()
         {

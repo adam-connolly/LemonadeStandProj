@@ -13,28 +13,35 @@ namespace LemonadeStand_3DayStarter
         public string name;
         int lemonPreference;
         int sugarPreference;
-        Recipe recipe;
-        Player player;
+        double pricePreference;        
         public bool willBuyLemonade;
+        
 
         //constructor
-        public Customer(string name)
+        public Customer(string name, Random lemonPref, Random sugarPref, Random pricePref)
         {
             this.name = name;
-            Random lemonPref = new Random();
-            lemonPreference = lemonPref.Next(3, 8);
-            Random sugarPref = new Random();
-            sugarPreference = sugarPref.Next(3, 8);
+            lemonPreference = lemonPref.Next(2, 8);
+            sugarPreference = sugarPref.Next(2, 8);           
+            pricePreference = pricePref.Next(1, 10);
         }
         //member methods
         public bool BuyCupOfLemonade(Recipe recipe, Customer customer)
-        {            
-            if ((recipe.amountOfLemons >= customer.lemonPreference - 1 && recipe.amountOfLemons <= customer.lemonPreference +1) && 
-                (recipe.amountOfSugarCubes >= customer.sugarPreference - 1 && recipe.amountOfSugarCubes <= customer.sugarPreference + 1))
-            {              
+        {
+            
+            if (((customer.lemonPreference - 1) <= recipe.amountOfLemons  && (customer.lemonPreference + 1) >= recipe.amountOfLemons) && 
+                ((customer.sugarPreference - 1) <= recipe.amountOfSugarCubes && (customer.sugarPreference + 1) >= recipe.amountOfSugarCubes) &&
+                (customer.pricePreference <= recipe.pricePerCup))
+            {
+                Console.WriteLine($"{customer.name} bought a cup of Lemonade!");
                 return willBuyLemonade = true;         
             }
-            return willBuyLemonade = false;
+            else
+            {
+                Console.WriteLine($"{customer.name} did not buy lemonade.");
+                return willBuyLemonade = false;
+            }
+            
         }
 
     }

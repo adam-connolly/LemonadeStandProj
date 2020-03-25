@@ -61,34 +61,70 @@ namespace LemonadeStand_3DayStarter
         }
         public void RemoveLemonsFromInventory(int numberOfLemons)
         {
-            for (int i = 0; i < numberOfLemons; i++)
+            if (numberOfLemons <= lemons.Count)
             {
-                lemons.Remove(lemons[i]);
+                for (int i = 0; i < numberOfLemons; i++)
+                {
+                    lemons.Remove(lemons[0]);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Don't have enough lemons to make more lemonade!");                
             }
         }
 
         public void RemoveSugarCubesFromInventory(int numberOfSugarCubes)
         {
-            for (int i = 0; i < numberOfSugarCubes; i++)
+            if (numberOfSugarCubes <= sugarCubes.Count)
             {
-                sugarCubes.Remove(sugarCubes[i]);
+                for (int i = 0; i < numberOfSugarCubes; i++)
+                {
+                    sugarCubes.Remove(sugarCubes[0]);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Don't have enough sugar to make more lemonade!");
             }
         }
 
         public void RemoveIceCubesFromInventory(int numberOfIceCubes)
         {
-            for (int i = 0; i < numberOfIceCubes; i++)
+            if (numberOfIceCubes <= iceCubes.Count)
             {
-                iceCubes.Remove(iceCubes[i]);
+                for (int i = 0; i < numberOfIceCubes; i++)
+                {
+                    iceCubes.Remove(iceCubes[0]);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Don't have enough ice to make more lemonade!");
             }
         }
 
         public void RemoveCupsFromInventory(int numberOfCups)
         {
-            for (int i = 0; i < numberOfCups; i++)
+            if (numberOfCups <= cups.Count)
             {
-                cups.Remove(cups[i]);
+                for (int i = 0; i < numberOfCups; i++)
+                {
+                    cups.Remove(cups[0]);
+                }
             }
+            else
+            {
+                Console.WriteLine("Don't have enough cups to serve more lemonade!");
+            }
+        }
+        public void DisplayInventory()
+        {
+            Console.WriteLine($"Your Stock:\n" +
+                $"Lemons: {lemons.Count}\n" +
+                $"Sugar Cubes: {sugarCubes.Count}\n" +
+                $"Ice Cubes: {iceCubes.Count}\n" +
+                $"Cups: {cups.Count}");
         }
     }
 }

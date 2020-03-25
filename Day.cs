@@ -12,10 +12,16 @@ namespace LemonadeStand_3DayStarter
         public Weather weather;
         public List<Customer> customers;
         public string dayNumber;
+        Random lemonPreference;
+        Random sugarPreference;
+        Random pricePreference;
 
         //constructor
         public Day(string dayNumber)
         {
+            lemonPreference = new Random();
+            sugarPreference = new Random();
+            pricePreference = new Random();
             weather = new Weather();
             customers = new List<Customer>();
             this.dayNumber = dayNumber;
@@ -25,7 +31,7 @@ namespace LemonadeStand_3DayStarter
         {
             for (int i = 0; i < 100; i++)
             {
-                customers.Add(new Customer($"Customer{i + 1}"));
+                customers.Add(new Customer($"Customer{i + 1}", lemonPreference, sugarPreference, pricePreference));
             }
         }
         public void DisplayWeather()
@@ -47,16 +53,22 @@ namespace LemonadeStand_3DayStarter
             player.MakePitcher();
 
             foreach(Customer customer in customers)
-            {               
-                if (player.pitcher.cupsLeftInPitcher <= 0)
+            {
+                if (player.inventory.cups.Count <= 0 || player.inventory.iceCubes.Count <= 0 || player.inventory.lemons.Count <= 0 || player.inventory.sugarCubes.Count <= 0)
                 {
-                    player.MakePitcher();
-                    player.SellCupOfLemonade(customer.BuyCupOfLemonade(player.recipe, customer));
+                    Console.WriteLine("SOLD OUT");
+                    break;
+                }
+                else if (player.pitcher.cupsLeftInPitcher <= 0)
+                {
+                     player.MakePitcher();
+                     player.SellCupOfLemonade(customer.BuyCupOfLemonade(player.recipe, customer));
                 }
                 else
                 {
-                    player.SellCupOfLemonade(customer.BuyCupOfLemonade(player.recipe, customer));
+                     player.SellCupOfLemonade(customer.BuyCupOfLemonade(player.recipe, customer));
                 }
+
             }           
         }
     }
