@@ -30,21 +30,34 @@ namespace LemonadeStand_3DayStarter
         }
         public void DisplayWeather()
         {
-            Console.WriteLine(weather.SetTemperature());
-            Console.WriteLine(weather.SetWeatherConditions());
+            weather.SetTemperature();
+            weather.SetWeatherConditions();
         }
         public void RunDay(Store store, Player player)
         {
+            DisplayWeather();
+            store.DisplayPrices();
+            Console.WriteLine($"Money: ${player.wallet.Money}");
             store.SellLemons(player);
-            store.SellIceCubes(player);
             store.SellSugarCubes(player);
+            store.SellIceCubes(player);
             store.SellCups(player);
             player.SetRecipe();
-            //GenerateCustomerList();
+            GenerateCustomerList();
             player.MakePitcher();
 
-            player.SellCupOfLemonade(customers[0].BuyCupOfLemonade());
+            foreach(Customer customer in customers)
+            {               
+                if (player.pitcher.cupsLeftInPitcher <= 0)
+                {
+                    player.MakePitcher();
+                    player.SellCupOfLemonade(customer.BuyCupOfLemonade(player.recipe, customer));
+                }
+                else
+                {
+                    player.SellCupOfLemonade(customer.BuyCupOfLemonade(player.recipe, customer));
+                }
+            }           
         }
-
     }
 }

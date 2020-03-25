@@ -27,9 +27,10 @@ namespace LemonadeStand_3DayStarter
             sugarPreference = sugarPref.Next(3, 8);
         }
         //member methods
-        public bool BuyCupOfLemonade()
+        public bool BuyCupOfLemonade(Recipe recipe, Customer customer)
         {            
-            if ((recipe.amountOfLemons >= lemonPreference - 1 && recipe.amountOfLemons <= lemonPreference +1) && (recipe.amountOfSugarCubes >= sugarPreference - 1 && recipe.amountOfSugarCubes <= sugarPreference + 1))
+            if ((recipe.amountOfLemons >= customer.lemonPreference - 1 && recipe.amountOfLemons <= customer.lemonPreference +1) && 
+                (recipe.amountOfSugarCubes >= customer.sugarPreference - 1 && recipe.amountOfSugarCubes <= customer.sugarPreference + 1))
             {              
                 return willBuyLemonade = true;         
             }

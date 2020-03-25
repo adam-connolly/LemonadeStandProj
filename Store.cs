@@ -78,5 +78,12 @@ namespace LemonadeStand_3DayStarter
         {
             wallet.PayMoneyForItems(transactionAmount);
         }
+        public void DisplayPrices()
+        {
+            Console.WriteLine($"Lemons: ${pricePerLemon}\n" +
+                $"Sugar Cubes: ${pricePerSugarCube}\n" +
+                $"Ice Cubes: ${pricePerIceCube}\n" +
+                $"Cups: ${pricePerCup}");
+        }
     }
 }
