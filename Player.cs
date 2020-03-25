@@ -50,14 +50,15 @@ namespace LemonadeStand_3DayStarter
             inventory.RemoveSugarCubesFromInventory(recipe.amountOfSugarCubes);
 
         }
-        public void SellCupOfLemonade()
+        public void SellCupOfLemonade(bool custDecision)
         {
-            wallet.GetMoneyFromSale(recipe.pricePerCup);
-            inventory.RemoveCupsFromInventory(1);
-            inventory.RemoveIceCubesFromInventory(recipe.amountOfIceCubes);
-            pitcher.cupsLeftInPitcher--;
-        }
-
-        
+            if (custDecision == true)
+            {
+                wallet.GetMoneyFromSale(recipe.pricePerCup);
+                inventory.RemoveCupsFromInventory(1);
+                inventory.RemoveIceCubesFromInventory(recipe.amountOfIceCubes);
+                pitcher.cupsLeftInPitcher--;
+            }            
+        }        
     }
 }

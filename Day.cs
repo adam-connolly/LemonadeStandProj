@@ -28,5 +28,23 @@ namespace LemonadeStand_3DayStarter
                 customers.Add(new Customer($"Customer{i + 1}"));
             }
         }
+        public void DisplayWeather()
+        {
+            Console.WriteLine(weather.SetTemperature());
+            Console.WriteLine(weather.SetWeatherConditions());
+        }
+        public void RunDay(Store store, Player player)
+        {
+            store.SellLemons(player);
+            store.SellIceCubes(player);
+            store.SellSugarCubes(player);
+            store.SellCups(player);
+            player.SetRecipe();
+            //GenerateCustomerList();
+            player.MakePitcher();
+
+            player.SellCupOfLemonade(customers[0].BuyCupOfLemonade());
+        }
+
     }
 }

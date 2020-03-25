@@ -25,22 +25,21 @@ namespace LemonadeStand_3DayStarter
         public void RunGame()
         {
             SetGameLength();
-            
-            store.SellLemons(player);
-            store.SellIceCubes(player);
-            store.SellSugarCubes(player);
-            store.SellCups(player);
-            player.SetRecipe();
-            //GenerateCustomerList();
-            player.MakePitcher();
-            
-            player.SellCupOfLemonade();
+
+            PlayDay();
         }
         public void SetGameLength()
         {
             for (int i = 1; i <= 7; i++)
             {
                 days.Add(new Day($"Day {i}"));                
+            }
+        }
+        public void PlayDay()
+        {
+            foreach (Day day in days)
+            {
+                day.RunDay();
             }
         }
     }
