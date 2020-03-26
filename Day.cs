@@ -27,8 +27,8 @@ namespace LemonadeStand_3DayStarter
             this.dayNumber = dayNumber;
         }
         //member methods
-        public void GenerateCustomerList(string weather, int temperature)
-        {
+        public void GenerateCustomerList(string weather, int temperature)//SOLID Principle: Single Resposibility Principle
+        {                                                               //This method here is just used for creating a list of customers that will come by the stand in one day.
             if (weather == "Mostly Sunny")
             {
                 for (int i = 0; i < 100; i++)
