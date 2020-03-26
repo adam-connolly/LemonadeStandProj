@@ -26,19 +26,22 @@ namespace LemonadeStand_3DayStarter
         {
             SetGameLength();
 
-            PlayDay();
+            //PlayDay();
         }
         public void SetGameLength()
         {
             for (int i = 1; i <= 7; i++)
             {
-                days.Add(new Day($"Day {i}"));                
+                days.Add(new Day($"Day {i}"));
+                Console.WriteLine(days[i-1].dayNumber);
+                days[i-1].RunDay(store, player);
             }
         }
         public void PlayDay()
         {
             foreach (Day day in days)
             {
+                Console.WriteLine(day.dayNumber);
                 day.RunDay(store, player);
             }
         }

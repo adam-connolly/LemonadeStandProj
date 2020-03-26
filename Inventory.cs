@@ -124,7 +124,7 @@ namespace LemonadeStand_3DayStarter
                 $"Lemons: {lemons.Count}\n" +
                 $"Sugar Cubes: {sugarCubes.Count}\n" +
                 $"Ice Cubes: {iceCubes.Count}\n" +
-                $"Cups: {cups.Count}");
+                $"Cups: {cups.Count}\n");
         }
     }
 }

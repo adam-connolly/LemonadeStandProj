@@ -51,10 +51,7 @@ namespace LemonadeStand_3DayStarter
                 inventory.RemoveLemonsFromInventory(recipe.amountOfLemons);
                 inventory.RemoveSugarCubesFromInventory(recipe.amountOfSugarCubes);                
             }
-            else
-            {
-                Console.WriteLine("Don't have enough supplies to make more lemonade!");
-            }
+            
             
         }        
         public void SellCupOfLemonade(bool custDecision)

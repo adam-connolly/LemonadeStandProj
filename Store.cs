@@ -33,6 +33,12 @@ namespace LemonadeStand_3DayStarter
                 player.wallet.PayMoneyForItems(transactionAmount);
                 player.inventory.AddLemonsToInventory(lemonsToPurchase);
             }
+            else
+            {
+                Console.WriteLine("You do not have enough money. Try again.");
+                SellLemons(player);
+            }
+                       
         }
 
         public void SellSugarCubes(Player player)
@@ -43,6 +49,11 @@ namespace LemonadeStand_3DayStarter
             {
                 PerformTransaction(player.wallet, transactionAmount);
                 player.inventory.AddSugarCubesToInventory(sugarToPurchase);
+            }
+            else
+            {
+                Console.WriteLine("You do not have enough money. Try again.");
+                SellSugarCubes(player);
             }
         }
 
@@ -55,6 +66,11 @@ namespace LemonadeStand_3DayStarter
                 PerformTransaction(player.wallet, transactionAmount);
                 player.inventory.AddIceCubesToInventory(iceCubesToPurchase);
             }
+            else
+            {
+                Console.WriteLine("You do not have enough money. Try again.");
+                SellIceCubes(player);
+            }
         }
 
         public void SellCups(Player player)
@@ -65,6 +81,11 @@ namespace LemonadeStand_3DayStarter
             {
                 PerformTransaction(player.wallet, transactionAmount);
                 player.inventory.AddCupsToInventory(cupsToPurchase);
+            }
+            else
+            {
+                Console.WriteLine("You do not have enough money. Try again.");
+                SellCups(player);
             }
         }
 
@@ -80,7 +101,8 @@ namespace LemonadeStand_3DayStarter
         }
         public void DisplayPrices()
         {
-            Console.WriteLine($"Lemons: ${pricePerLemon}\n" +
+            Console.WriteLine($"Item Prices:\n" +
+                $"Lemons: ${pricePerLemon}\n" +
                 $"Sugar Cubes: ${pricePerSugarCube}\n" +
                 $"Ice Cubes: ${pricePerIceCube}\n" +
                 $"Cups: ${pricePerCup}");

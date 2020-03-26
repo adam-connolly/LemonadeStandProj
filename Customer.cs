@@ -26,22 +26,88 @@ namespace LemonadeStand_3DayStarter
             pricePreference = pricePref.Next(1, 10);
         }
         //member methods
-        public bool BuyCupOfLemonade(Recipe recipe, Customer customer)
+        public bool BuyCupOfLemonade(Recipe recipe, Customer customer, Weather weather)
         {
-            
-            if (((customer.lemonPreference - 1) <= recipe.amountOfLemons  && (customer.lemonPreference + 1) >= recipe.amountOfLemons) && 
+            if (weather.temperature >= 50 && weather.temperature <= 59)
+            {
+                if (((customer.lemonPreference - 1) <= recipe.amountOfLemons && (customer.lemonPreference + 1) >= recipe.amountOfLemons) &&
+                ((customer.sugarPreference - 1) <= recipe.amountOfSugarCubes && (customer.sugarPreference + 1) >= recipe.amountOfSugarCubes) &&
+                ((customer.pricePreference * .5) <= recipe.pricePerCup))
+                {
+                    Console.WriteLine($"{customer.name} bought a cup of Lemonade!");
+                    return willBuyLemonade = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{customer.name} did not buy lemonade.");
+                    return willBuyLemonade = false;
+                }
+            }
+            else if (weather.temperature >= 60 && weather.temperature <= 69)
+            {
+                if (((customer.lemonPreference - 1) <= recipe.amountOfLemons && (customer.lemonPreference + 1) >= recipe.amountOfLemons) &&
+                ((customer.sugarPreference - 1) <= recipe.amountOfSugarCubes && (customer.sugarPreference + 1) >= recipe.amountOfSugarCubes) &&
+                ((customer.pricePreference * .75) <= recipe.pricePerCup))
+                {
+                    Console.WriteLine($"{customer.name} bought a cup of Lemonade!");
+                    return willBuyLemonade = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{customer.name} did not buy lemonade.");
+                    return willBuyLemonade = false;
+                }
+            }
+            else if (weather.temperature >= 70 && weather.temperature <= 79)
+            {
+                if (((customer.lemonPreference - 1) <= recipe.amountOfLemons && (customer.lemonPreference + 1) >= recipe.amountOfLemons) &&
                 ((customer.sugarPreference - 1) <= recipe.amountOfSugarCubes && (customer.sugarPreference + 1) >= recipe.amountOfSugarCubes) &&
                 (customer.pricePreference <= recipe.pricePerCup))
+                {
+                    Console.WriteLine($"{customer.name} bought a cup of Lemonade!");
+                    return willBuyLemonade = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{customer.name} did not buy lemonade.");
+                    return willBuyLemonade = false;
+                }
+            }
+            else if (weather.temperature >= 80 && weather.temperature <= 89)
             {
-                Console.WriteLine($"{customer.name} bought a cup of Lemonade!");
-                return willBuyLemonade = true;         
+                if (((customer.lemonPreference - 1) <= recipe.amountOfLemons && (customer.lemonPreference + 1) >= recipe.amountOfLemons) &&
+                ((customer.sugarPreference - 1) <= recipe.amountOfSugarCubes && (customer.sugarPreference + 1) >= recipe.amountOfSugarCubes) &&
+                ((customer.pricePreference * 1.25) <= recipe.pricePerCup))
+                {
+                    Console.WriteLine($"{customer.name} bought a cup of Lemonade!");
+                    return willBuyLemonade = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{customer.name} did not buy lemonade.");
+                    return willBuyLemonade = false;
+                }
+            }
+            else if (weather.temperature >= 90 && weather.temperature <= 99)
+            {
+                if (((customer.lemonPreference - 1) <= recipe.amountOfLemons && (customer.lemonPreference + 1) >= recipe.amountOfLemons) &&
+                ((customer.sugarPreference - 1) <= recipe.amountOfSugarCubes && (customer.sugarPreference + 1) >= recipe.amountOfSugarCubes) &&
+                ((customer.pricePreference * 1.5) <= recipe.pricePerCup))
+                {
+                    Console.WriteLine($"{customer.name} bought a cup of Lemonade!");
+                    return willBuyLemonade = true;
+                }
+                else
+                {
+                    Console.WriteLine($"{customer.name} did not buy lemonade.");
+                    return willBuyLemonade = false;
+                }
             }
             else
             {
                 Console.WriteLine($"{customer.name} did not buy lemonade.");
                 return willBuyLemonade = false;
             }
-            
         }
 
     }
