@@ -36,6 +36,8 @@ namespace LemonadeStand_3DayStarter
                 Console.WriteLine(days[i-1].dayNumber);
                 days[i-1].RunDay(store, player);
             }
+            Console.WriteLine("Game Over");
+            Console.WriteLine($"Final Wallet balance: ${player.wallet.Money}");
         }
         public void PlayDay()
         {
